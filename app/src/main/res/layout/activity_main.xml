@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="650dp"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="2021-08-09 오늘은"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:fontFamily="@font/eland"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="572dp"
+        android:layout_weight="3"
+        android:padding="10dp"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_list">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:background="?android:attr/listDivider" />
+
+  </LinearLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:background="@color/white"
+      android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:background="@drawable/borderline">
+
+      <EditText
+          android:id="@+id/et_todo"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="0.4"
+          android:ellipsize="end"
+          android:gravity="center"
+          android:hint="할 일"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:fontFamily="@font/eland"
+          />
+
+      <EditText
+          android:id="@+id/et_memo"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="0.4"
+          android:ellipsize="end"
+          android:gravity="center"
+          android:hint="메모"
+          android:maxLines="1"
+          android:singleLine="true"
+          android:fontFamily="@font/eland"
+          />
+
+      <Button
+          android:id="@+id/btn_add"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="0.2"
+          android:text="추가"
+          android:fontFamily="@font/eland"
+          />
+    </LinearLayout>
+  </RelativeLayout>
+
+</RelativeLayout>
